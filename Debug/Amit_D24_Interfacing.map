@@ -9,7 +9,7 @@ c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
                               ./01-Source/02-HAL/LCD/Src/Lcd_Cfg.o (__do_copy_data)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
-                              ./01-Source/02-HAL/SSD/Src/SSD.o (__fixunssfsi)
+                              ./01-Source/04-Application/main.o (__fixunssfsi)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
                               ./01-Source/02-HAL/LCD/Src/Lcd.o (__subsf3)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
@@ -17,17 +17,17 @@ c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_div_sf.o)
                               ./01-Source/02-HAL/LCD/Src/Lcd.o (__divsf3)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
-                              ./01-Source/02-HAL/SSD/Src/SSD.o (__gtsf2)
+                              ./01-Source/04-Application/main.o (__gtsf2)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o) (__gesf2)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
-                              ./01-Source/02-HAL/SSD/Src/SSD.o (__ltsf2)
+                              ./01-Source/04-Application/main.o (__ltsf2)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o) (__fixsfsi)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o) (__thenan_sf)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_usi_to_sf.o)
-                              ./01-Source/04-Application/main.o (__floatunsisf)
+                              ./01-Source/02-HAL/LCD/Src/Lcd.o (__floatunsisf)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o) (__prologue_saves__)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
@@ -162,7 +162,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x26c8
+.text           0x00000000     0x2870
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -285,117 +285,117 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text          0x00000e1e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
                 0x00000e1e                . = ALIGN (0x2)
  *(.text.*)
- .text.main     0x00000e1e       0x80 ./01-Source/04-Application/main.o
+ .text.main     0x00000e1e      0x228 ./01-Source/04-Application/main.o
                 0x00000e1e                main
  .text.SSD_Init
-                0x00000e9e       0x4a ./01-Source/02-HAL/SSD/Src/SSD.o
-                0x00000e9e                SSD_Init
+                0x00001046       0x4a ./01-Source/02-HAL/SSD/Src/SSD.o
+                0x00001046                SSD_Init
  .text.SSD_DisplayNumber
-                0x00000ee8      0x24e ./01-Source/02-HAL/SSD/Src/SSD.o
-                0x00000ee8                SSD_DisplayNumber
+                0x00001090      0x24e ./01-Source/02-HAL/SSD/Src/SSD.o
+                0x00001090                SSD_DisplayNumber
  .text.LED_Init
-                0x00001136       0x2c ./01-Source/02-HAL/LED/Src/Led.o
-                0x00001136                LED_Init
- .text.LED_ON   0x00001162       0x62 ./01-Source/02-HAL/LED/Src/Led.o
-                0x00001162                LED_ON
- .text.LED_OFF  0x000011c4       0x62 ./01-Source/02-HAL/LED/Src/Led.o
-                0x000011c4                LED_OFF
+                0x000012de       0x2c ./01-Source/02-HAL/LED/Src/Led.o
+                0x000012de                LED_Init
+ .text.LED_ON   0x0000130a       0x62 ./01-Source/02-HAL/LED/Src/Led.o
+                0x0000130a                LED_ON
+ .text.LED_OFF  0x0000136c       0x62 ./01-Source/02-HAL/LED/Src/Led.o
+                0x0000136c                LED_OFF
  .text.LED_TOGGLE
-                0x00001226       0x5c ./01-Source/02-HAL/LED/Src/Led.o
-                0x00001226                LED_TOGGLE
+                0x000013ce       0x5c ./01-Source/02-HAL/LED/Src/Led.o
+                0x000013ce                LED_TOGGLE
  .text.Lcd_WriteCustom
-                0x00001282       0x7a ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x0000142a       0x7a ./01-Source/02-HAL/LCD/Src/Lcd.o
  .text.Lcd_Init
-                0x000012fc      0x3ea ./01-Source/02-HAL/LCD/Src/Lcd.o
-                0x000012fc                Lcd_Init
+                0x000014a4      0x3ea ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x000014a4                Lcd_Init
  .text.Enable_Pulse
-                0x000016e6      0x29a ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x0000188e      0x29a ./01-Source/02-HAL/LCD/Src/Lcd.o
  .text.Lcd_Data
-                0x00001980       0x4c ./01-Source/02-HAL/LCD/Src/Lcd.o
- .text.Lcd_Cmd  0x000019cc       0x4c ./01-Source/02-HAL/LCD/Src/Lcd.o
-                0x000019cc                Lcd_Cmd
+                0x00001b28       0x4c ./01-Source/02-HAL/LCD/Src/Lcd.o
+ .text.Lcd_Cmd  0x00001b74       0x4c ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x00001b74                Lcd_Cmd
  .text.Lcd_DisplayChr
-                0x00001a18       0x1a ./01-Source/02-HAL/LCD/Src/Lcd.o
-                0x00001a18                Lcd_DisplayChr
+                0x00001bc0       0x1a ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x00001bc0                Lcd_DisplayChr
  .text.Lcd_DisplayStr
-                0x00001a32       0x38 ./01-Source/02-HAL/LCD/Src/Lcd.o
-                0x00001a32                Lcd_DisplayStr
+                0x00001bda       0x38 ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x00001bda                Lcd_DisplayStr
  .text.Lcd_Goto_Row_Column
-                0x00001a6a       0x4e ./01-Source/02-HAL/LCD/Src/Lcd.o
-                0x00001a6a                Lcd_Goto_Row_Column
+                0x00001c12       0x4e ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x00001c12                Lcd_Goto_Row_Column
  .text.Lcd_DisplayNum
-                0x00001ab8       0xa0 ./01-Source/02-HAL/LCD/Src/Lcd.o
-                0x00001ab8                Lcd_DisplayNum
+                0x00001c60       0xa0 ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x00001c60                Lcd_DisplayNum
  .text.LcdDisplayFloat
-                0x00001b58       0xc6 ./01-Source/02-HAL/LCD/Src/Lcd.o
-                0x00001b58                LcdDisplayFloat
+                0x00001d00       0xc6 ./01-Source/02-HAL/LCD/Src/Lcd.o
+                0x00001d00                LcdDisplayFloat
  .text.Buzzer_Init
-                0x00001c1e       0x18 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
-                0x00001c1e                Buzzer_Init
+                0x00001dc6       0x18 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
+                0x00001dc6                Buzzer_Init
  .text.Buzzer_ON
-                0x00001c36       0x18 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
-                0x00001c36                Buzzer_ON
+                0x00001dde       0x18 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
+                0x00001dde                Buzzer_ON
  .text.Buzzer_OFF
-                0x00001c4e       0x18 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
-                0x00001c4e                Buzzer_OFF
+                0x00001df6       0x18 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
+                0x00001df6                Buzzer_OFF
  .text.Buzzer_Toggle
-                0x00001c66       0x16 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
-                0x00001c66                Buzzer_Toggle
+                0x00001e0e       0x16 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
+                0x00001e0e                Buzzer_Toggle
  .text.Button_Init
-                0x00001c7c       0x2c ./01-Source/02-HAL/BUTTON/Src/Button.o
-                0x00001c7c                Button_Init
+                0x00001e24       0x2c ./01-Source/02-HAL/BUTTON/Src/Button.o
+                0x00001e24                Button_Init
  .text.Button_GetStatus
-                0x00001ca8       0x86 ./01-Source/02-HAL/BUTTON/Src/Button.o
-                0x00001ca8                Button_GetStatus
+                0x00001e50       0x86 ./01-Source/02-HAL/BUTTON/Src/Button.o
+                0x00001e50                Button_GetStatus
  .text.Glbl_Interrupt_Enable
-                0x00001d2e       0x1c ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
-                0x00001d2e                Glbl_Interrupt_Enable
+                0x00001ed6       0x1c ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
+                0x00001ed6                Glbl_Interrupt_Enable
  .text.Glbl_Interrupt_Disable
-                0x00001d4a       0x1c ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
-                0x00001d4a                Glbl_Interrupt_Disable
+                0x00001ef2       0x1c ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
+                0x00001ef2                Glbl_Interrupt_Disable
  .text.Ext_Interrupt_Enable
-                0x00001d66       0x6e ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
-                0x00001d66                Ext_Interrupt_Enable
+                0x00001f0e       0x6e ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+                0x00001f0e                Ext_Interrupt_Enable
  .text.Ext_Interrupt_Disable
-                0x00001dd4       0x6e ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
-                0x00001dd4                Ext_Interrupt_Disable
+                0x00001f7c       0x6e ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+                0x00001f7c                Ext_Interrupt_Disable
  .text.Ext_Interrupt_SncControl
-                0x00001e42       0xa0 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
-                0x00001e42                Ext_Interrupt_SncControl
+                0x00001fea       0xa0 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+                0x00001fea                Ext_Interrupt_SncControl
  .text.Dio_ConfigChannel
-                0x00001ee2      0x1c6 ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x00001ee2                Dio_ConfigChannel
+                0x0000208a      0x1c6 ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x0000208a                Dio_ConfigChannel
  .text.Dio_WriteChannel
-                0x000020a8      0x1c6 ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x000020a8                Dio_WriteChannel
+                0x00002250      0x1c6 ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x00002250                Dio_WriteChannel
  .text.Dio_WriteGroup
-                0x0000226e       0xe0 ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x0000226e                Dio_WriteGroup
+                0x00002416       0xe0 ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x00002416                Dio_WriteGroup
  .text.Dio_TogglChannel
-                0x0000234e       0xfa ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x0000234e                Dio_TogglChannel
+                0x000024f6       0xfa ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x000024f6                Dio_TogglChannel
  .text.Dio_ReadChannel
-                0x00002448      0x126 ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x00002448                Dio_ReadChannel
- .text.adcInit  0x0000256e       0x24 ./01-Source/01-MCAL/ADC/Src/Adc.o
-                0x0000256e                adcInit
- .text.adcRead  0x00002592       0x84 ./01-Source/01-MCAL/ADC/Src/Adc.o
-                0x00002592                adcRead
- .text.libgcc   0x00002616       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                0x00002616                __udivmodqi4
- .text.libgcc   0x0000262e       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x0000262e                __udivmodhi4
- .text.libgcc   0x00002656        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00002656        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00002656       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00002656                __prologue_saves__
- .text.libgcc   0x0000268e       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x0000268e                __epilogue_restores__
-                0x000026c4                . = ALIGN (0x2)
+                0x000025f0      0x126 ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x000025f0                Dio_ReadChannel
+ .text.adcInit  0x00002716       0x24 ./01-Source/01-MCAL/ADC/Src/Adc.o
+                0x00002716                adcInit
+ .text.adcRead  0x0000273a       0x84 ./01-Source/01-MCAL/ADC/Src/Adc.o
+                0x0000273a                adcRead
+ .text.libgcc   0x000027be       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x000027be                __udivmodqi4
+ .text.libgcc   0x000027d6       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x000027d6                __udivmodhi4
+ .text.libgcc   0x000027fe        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000027fe        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000027fe       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x000027fe                __prologue_saves__
+ .text.libgcc   0x00002836       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00002836                __epilogue_restores__
+                0x0000286c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000026c4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000026c4                exit
-                0x000026c4                _exit
+ .fini9         0x0000286c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x0000286c                exit
+                0x0000286c                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -414,11 +414,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000026c4        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000286c        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000026c8                _etext = .
+                0x00002870                _etext = .
 
-.data           0x00800060      0x148 load address 0x000026c8
+.data           0x00800060      0x148 load address 0x00002870
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -506,8 +506,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.bss*)
  *(COMMON)
                 0x008001a8                PROVIDE (__bss_end, .)
-                0x000026c8                __data_load_start = LOADADDR (.data)
-                0x00002810                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00002870                __data_load_start = LOADADDR (.data)
+                0x000029b8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001a8        0x0
                 0x008001a8                PROVIDE (__noinit_start, .)
@@ -532,33 +532,33 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x270c
+.stab           0x00000000     0x2874
  *(.stab)
- .stab          0x00000000      0x600 ./01-Source/04-Application/main.o
- .stab          0x00000600      0x3cc ./01-Source/02-HAL/SSD/Src/SSD.o
+ .stab          0x00000000      0x768 ./01-Source/04-Application/main.o
+ .stab          0x00000768      0x3cc ./01-Source/02-HAL/SSD/Src/SSD.o
                                 0x660 (size before relaxing)
- .stab          0x000009cc      0x27c ./01-Source/02-HAL/LED/Src/Led.o
+ .stab          0x00000b34      0x27c ./01-Source/02-HAL/LED/Src/Led.o
                                 0x3b4 (size before relaxing)
- .stab          0x00000c48      0xb04 ./01-Source/02-HAL/LCD/Src/Lcd.o
+ .stab          0x00000db0      0xb04 ./01-Source/02-HAL/LCD/Src/Lcd.o
                                 0xdbc (size before relaxing)
- .stab          0x0000174c      0x144 ./01-Source/02-HAL/LCD/Src/Lcd_Cfg.o
+ .stab          0x000018b4      0x144 ./01-Source/02-HAL/LCD/Src/Lcd_Cfg.o
                                 0x408 (size before relaxing)
- .stab          0x00001890      0x1d4 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
+ .stab          0x000019f8      0x1d4 ./01-Source/02-HAL/BUZZER/Src/Buzzer.o
                                 0x2dc (size before relaxing)
- .stab          0x00001a64      0x240 ./01-Source/02-HAL/BUTTON/Src/Button.o
+ .stab          0x00001bcc      0x240 ./01-Source/02-HAL/BUTTON/Src/Button.o
                                 0x390 (size before relaxing)
- .stab          0x00001ca4      0x174 ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
+ .stab          0x00001e0c      0x174 ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
                                 0x204 (size before relaxing)
- .stab          0x00001e18      0x24c ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+ .stab          0x00001f80      0x24c ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
                                 0x324 (size before relaxing)
- .stab          0x00002064      0x4d4 ./01-Source/01-MCAL/DIO/Src/Dio.o
+ .stab          0x000021cc      0x4d4 ./01-Source/01-MCAL/DIO/Src/Dio.o
                                 0x5dc (size before relaxing)
- .stab          0x00002538      0x1d4 ./01-Source/01-MCAL/ADC/Src/Adc.o
+ .stab          0x000026a0      0x1d4 ./01-Source/01-MCAL/ADC/Src/Adc.o
                                 0x264 (size before relaxing)
 
-.stabstr        0x00000000     0x173f
+.stabstr        0x00000000     0x1720
  *(.stabstr)
- .stabstr       0x00000000     0x173f ./01-Source/04-Application/main.o
+ .stabstr       0x00000000     0x1720 ./01-Source/04-Application/main.o
 
 .stab.excl
  *(.stab.excl)
