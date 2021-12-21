@@ -14,6 +14,9 @@ RM := rm -rf
 -include 01-Source/02-HAL/LCD/Src/subdir.mk
 -include 01-Source/02-HAL/BUZZER/Src/subdir.mk
 -include 01-Source/02-HAL/BUTTON/Src/subdir.mk
+-include 01-Source/01-MCAL/WDG/Src/subdir.mk
+-include 01-Source/01-MCAL/UART/Src/subdir.mk
+-include 01-Source/01-MCAL/TIMER0/Src/subdir.mk
 -include 01-Source/01-MCAL/GLBL_INT/Src/subdir.mk
 -include 01-Source/01-MCAL/EXT_INT/Src/subdir.mk
 -include 01-Source/01-MCAL/DIO/Src/subdir.mk
