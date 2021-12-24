@@ -22,7 +22,9 @@
   D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\EXT_INT\Inc/Ext_INT_Reg.h \
   D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\EXT_INT\Inc/Ext_INT_Types.h \
   D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc.h \
-  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc_Reg.h
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc_Reg.h \
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart.h \
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart_Private.h
 
 D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\00-Lib/Std_Types.h:
 
@@ -69,3 +71,7 @@ D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\EXT_INT\Inc/Ext_INT_T
 D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc.h:
 
 D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc_Reg.h:
+
+D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart.h:
+
+D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart_Private.h:

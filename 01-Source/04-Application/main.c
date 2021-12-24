@@ -15,21 +15,30 @@
 #include "Ext_INT.h"
 #include <avr/interrupt.h>
 #include "Adc.h"
-#define WDG_WDTCR_REG			(*(volatile u8*)0x41)
+#include "Uart.h"
+#include <string.h>
+
+extern volatile u8 UART_RxBuffer[RX_BUFFER_SIZE];
+extern volatile boolean Rx_Buffer_Ready;
+
 int main ()
 {
+	u8 uartResult = 0;
+	Glbl_Interrupt_Enable();
+	Lcd_Init();
+	Lcd_Cmd(_LCD_CURSOR_OFF);
 	LED_Init();
-	WDG_WDTCR_REG |= 7;   			/*	Reset Time 2.1s	*/
-	SET_BIT(WDG_WDTCR_REG,3);		/*	Enable Watchdog*/
-
-	LED_ON(LED0);
-	_delay_ms(900);
-	LED_OFF(LED0);
-	_delay_ms(900);
-
+	UART_Init(UART_BAUDRATE_9600);
+	UART_TransmitStr("Hello UART.......");
 	while (1)
 	{
-		asm("WDR");
+		if (Rx_Buffer_Ready == TRUE)
+		{
+			Rx_Buffer_Ready = FALSE;
+			Lcd_Cmd(_LCD_CLEAR);
+			Lcd_Goto_Row_Column(0, 0);
+			Lcd_DisplayStr(UART_RxBuffer);
+		}
 	}
 	return 0;
 }

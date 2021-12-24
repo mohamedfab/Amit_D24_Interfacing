@@ -17,6 +17,7 @@ RM := rm -rf
 -include 01-Source/01-MCAL/WDG/Src/subdir.mk
 -include 01-Source/01-MCAL/UART/Src/subdir.mk
 -include 01-Source/01-MCAL/TIMER0/Src/subdir.mk
+-include 01-Source/01-MCAL/SPI/Src/subdir.mk
 -include 01-Source/01-MCAL/GLBL_INT/Src/subdir.mk
 -include 01-Source/01-MCAL/EXT_INT/Src/subdir.mk
 -include 01-Source/01-MCAL/DIO/Src/subdir.mk

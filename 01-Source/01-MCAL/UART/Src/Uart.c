@@ -7,7 +7,12 @@
  *
  ***************************************************/
 #include <Uart.h>
-
+#include "Led.h"
+#include <avr/interrupt.h>
+volatile u8 uartResult = 0;
+volatile u8 UART_RxBuffer[RX_BUFFER_SIZE];
+volatile u8 UART_RxBuffer_Index = 0;
+volatile boolean Rx_Buffer_Ready = FALSE;
 void UART_Init(u16 baudRate)
 {
 	/* Set baud rate */
@@ -18,6 +23,7 @@ void UART_Init(u16 baudRate)
 	SET_BIT(UART_UCSRB_REG,TXEN_BIT_NO);  /* Enable Transmitter */
 	/* Set frame format: 8data, 1stop bit, Even Parity */
 	UART_UCSRC_REG |= (1 << URSEL_BIT_NO)|UART_8_BIT_DATA | UART_EVEN_PARITY;
+	SET_BIT(UART_UCSRB_REG,7); /*	Enable Rx Complete Interrupt	*/
 }
 
 void UART_TransmitChr(u8 data)
@@ -39,11 +45,41 @@ void UART_TransmitStr(u8 *str)
 	}
 }
 
+//u8 UART_ReceiveChr(void)
+//{
+//	/* Wait for data to be received */
+//	while (!(CHK_BIT(UART_UCSRA_REG,RXC_BIT_NO)))
+//			;
+//	/* Get and return received data from buffer */
+//	return UART_UDR_REG;
+//}
+
 u8 UART_ReceiveChr(void)
 {
 	/* Wait for data to be received */
-	while (!(CHK_BIT(UART_UCSRA_REG,RXC_BIT_NO)))
-			;
+	if ((CHK_BIT(UART_UCSRA_REG,RXC_BIT_NO)))
+	{
+		return UART_UDR_REG;
+	}
+	else
+	{
+		return 0;
+	}
 	/* Get and return received data from buffer */
-	return UART_UDR_REG;
+
+}
+ISR(USART_RXC_vect)
+{
+	UART_RxBuffer[UART_RxBuffer_Index] = UART_UDR_REG;
+	if (UART_RxBuffer[UART_RxBuffer_Index] == '\r')
+	{
+		UART_RxBuffer_Index = 0;
+		Rx_Buffer_Ready = TRUE;
+		LED_TOGGLE(LED1);
+	}
+	else
+	{
+		UART_RxBuffer_Index++;
+		LED_TOGGLE(LED0);
+	}
 }

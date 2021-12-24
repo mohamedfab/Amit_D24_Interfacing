@@ -24,6 +24,7 @@ SUBDIRS := \
 01-Source/01-MCAL/DIO/Src \
 01-Source/01-MCAL/EXT_INT/Src \
 01-Source/01-MCAL/GLBL_INT/Src \
+01-Source/01-MCAL/SPI/Src \
 01-Source/01-MCAL/TIMER0/Src \
 01-Source/01-MCAL/UART/Src \
 01-Source/01-MCAL/WDG/Src \

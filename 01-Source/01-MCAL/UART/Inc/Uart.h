@@ -12,6 +12,8 @@
 #include "Bit_Math.h"
 #include "Uart_Private.h"
 
+#define RX_BUFFER_SIZE			(25)
+
 #define UART_BAUDRATE_1200			(0x340)
 #define UART_BAUDRATE_2400			(0x19F)
 #define UART_BAUDRATE_4800			(0xCF)
