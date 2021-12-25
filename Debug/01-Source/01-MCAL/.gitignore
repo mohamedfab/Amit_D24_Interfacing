@@ -2,3 +2,5 @@
 /TIMER0/
 /WDG/
 /UART/
+/I2C/
+/SPI/

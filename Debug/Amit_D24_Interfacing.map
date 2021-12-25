@@ -69,6 +69,7 @@ LOAD ./01-Source/01-MCAL/WDG/Src/Wdg.o
 LOAD ./01-Source/01-MCAL/UART/Src/Uart.o
 LOAD ./01-Source/01-MCAL/TIMER0/Src/Timer0.o
 LOAD ./01-Source/01-MCAL/SPI/Src/Spi.o
+LOAD ./01-Source/01-MCAL/I2C/Src/I2c.o
 LOAD ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
 LOAD ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
 LOAD ./01-Source/01-MCAL/DIO/Src/Dio.o
@@ -167,7 +168,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1816
+.text           0x00000000     0x18f0
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -254,6 +255,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text          0x00000092        0x0 ./01-Source/01-MCAL/UART/Src/Uart.o
  .text          0x00000092        0x0 ./01-Source/01-MCAL/TIMER0/Src/Timer0.o
  .text          0x00000092        0x0 ./01-Source/01-MCAL/SPI/Src/Spi.o
+ .text          0x00000092        0x0 ./01-Source/01-MCAL/I2C/Src/I2c.o
  .text          0x00000092        0x0 ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
  .text          0x00000092        0x0 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
  .text          0x00000092        0x0 ./01-Source/01-MCAL/DIO/Src/Dio.o
@@ -415,56 +417,86 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text.Spi_MasterInit
                 0x000012d8       0x4a ./01-Source/01-MCAL/SPI/Src/Spi.o
                 0x000012d8                Spi_MasterInit
+ .text.I2C_MasterInit
+                0x00001322       0x10 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x00001322                I2C_MasterInit
+ .text.I2C_SlaveInit
+                0x00001332       0x1e ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x00001332                I2C_SlaveInit
+ .text.I2C_StopCondition
+                0x00001350       0x12 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x00001350                I2C_StopCondition
+ .text.I2C_WriteByte
+                0x00001362       0x14 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x00001362                I2C_WriteByte
+ .text.I2C_ReadByte
+                0x00001376       0x14 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x00001376                I2C_ReadByte
+ .text.I2C_ReadStatus
+                0x0000138a        0x6 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x0000138a                I2C_ReadStatus
+ .text.I2C_Send_SlaveAddressReadOperation
+                0x00001390       0x18 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x00001390                I2C_Send_SlaveAddressReadOperation
+ .text.I2C_Send_SlaveAddressWriteOperation
+                0x000013a8       0x16 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x000013a8                I2C_Send_SlaveAddressWriteOperation
+ .text.I2C_RepeatedStartCondition
+                0x000013be       0x20 ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x000013be                I2C_RepeatedStartCondition
+ .text.I2C_StartCondition
+                0x000013de       0x1e ./01-Source/01-MCAL/I2C/Src/I2c.o
+                0x000013de                I2C_StartCondition
  .text.Glbl_Interrupt_Enable
-                0x00001322        0xc ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
-                0x00001322                Glbl_Interrupt_Enable
+                0x000013fc        0xc ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
+                0x000013fc                Glbl_Interrupt_Enable
  .text.Glbl_Interrupt_Disable
-                0x0000132e        0xc ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
-                0x0000132e                Glbl_Interrupt_Disable
+                0x00001408        0xc ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
+                0x00001408                Glbl_Interrupt_Disable
  .text.Ext_Interrupt_Enable
-                0x0000133a       0x32 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
-                0x0000133a                Ext_Interrupt_Enable
+                0x00001414       0x32 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+                0x00001414                Ext_Interrupt_Enable
  .text.Ext_Interrupt_Disable
-                0x0000136c       0x32 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
-                0x0000136c                Ext_Interrupt_Disable
+                0x00001446       0x32 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+                0x00001446                Ext_Interrupt_Disable
  .text.Ext_Interrupt_SncControl
-                0x0000139e       0x4c ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
-                0x0000139e                Ext_Interrupt_SncControl
+                0x00001478       0x4c ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+                0x00001478                Ext_Interrupt_SncControl
  .text.Dio_ConfigChannel
-                0x000013ea       0xfe ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x000013ea                Dio_ConfigChannel
+                0x000014c4       0xfe ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x000014c4                Dio_ConfigChannel
  .text.Dio_WriteChannel
-                0x000014e8       0xfe ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x000014e8                Dio_WriteChannel
+                0x000015c2       0xfe ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x000015c2                Dio_WriteChannel
  .text.Dio_WriteGroup
-                0x000015e6       0x5e ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x000015e6                Dio_WriteGroup
+                0x000016c0       0x5e ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x000016c0                Dio_WriteGroup
  .text.Dio_TogglChannel
-                0x00001644       0x7a ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x00001644                Dio_TogglChannel
+                0x0000171e       0x7a ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x0000171e                Dio_TogglChannel
  .text.Dio_ReadChannel
-                0x000016be       0x5c ./01-Source/01-MCAL/DIO/Src/Dio.o
-                0x000016be                Dio_ReadChannel
- .text.adcInit  0x0000171a       0x10 ./01-Source/01-MCAL/ADC/Src/Adc.o
-                0x0000171a                adcInit
- .text.adcRead  0x0000172a       0x3a ./01-Source/01-MCAL/ADC/Src/Adc.o
-                0x0000172a                adcRead
- .text.libgcc   0x00001764       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                0x00001764                __udivmodqi4
- .text.libgcc   0x0000177c       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x0000177c                __udivmodhi4
- .text.libgcc   0x000017a4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000017a4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x000017a4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x000017a4       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x000017a4                __prologue_saves__
- .text.libgcc   0x000017dc       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x000017dc                __epilogue_restores__
-                0x00001812                . = ALIGN (0x2)
+                0x00001798       0x5c ./01-Source/01-MCAL/DIO/Src/Dio.o
+                0x00001798                Dio_ReadChannel
+ .text.adcInit  0x000017f4       0x10 ./01-Source/01-MCAL/ADC/Src/Adc.o
+                0x000017f4                adcInit
+ .text.adcRead  0x00001804       0x3a ./01-Source/01-MCAL/ADC/Src/Adc.o
+                0x00001804                adcRead
+ .text.libgcc   0x0000183e       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x0000183e                __udivmodqi4
+ .text.libgcc   0x00001856       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00001856                __udivmodhi4
+ .text.libgcc   0x0000187e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x0000187e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000187e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000187e       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x0000187e                __prologue_saves__
+ .text.libgcc   0x000018b6       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x000018b6                __epilogue_restores__
+                0x000018ec                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001812        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00001812                exit
-                0x00001812                _exit
+ .fini9         0x000018ec        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000018ec                exit
+                0x000018ec                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -483,11 +515,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001812        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000018ec        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001816                _etext = .
+                0x000018f0                _etext = .
 
-.data           0x00800060      0x15a load address 0x00001816
+.data           0x00800060      0x15a load address 0x000018f0
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -502,6 +534,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .data          0x00800072        0x0 ./01-Source/01-MCAL/UART/Src/Uart.o
  .data          0x00800072        0x0 ./01-Source/01-MCAL/TIMER0/Src/Timer0.o
  .data          0x00800072        0x0 ./01-Source/01-MCAL/SPI/Src/Spi.o
+ .data          0x00800072        0x0 ./01-Source/01-MCAL/I2C/Src/I2c.o
  .data          0x00800072        0x0 ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
  .data          0x00800072        0x0 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
  .data          0x00800072        0x0 ./01-Source/01-MCAL/DIO/Src/Dio.o
@@ -553,6 +586,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .bss           0x008001ba        0x0 ./01-Source/01-MCAL/UART/Src/Uart.o
  .bss           0x008001ba        0x0 ./01-Source/01-MCAL/TIMER0/Src/Timer0.o
  .bss           0x008001ba        0x0 ./01-Source/01-MCAL/SPI/Src/Spi.o
+ .bss           0x008001ba        0x0 ./01-Source/01-MCAL/I2C/Src/I2c.o
  .bss           0x008001ba        0x0 ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
  .bss           0x008001ba        0x0 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
  .bss           0x008001ba        0x0 ./01-Source/01-MCAL/DIO/Src/Dio.o
@@ -590,8 +624,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  COMMON         0x008001bd       0x19 ./01-Source/01-MCAL/UART/Src/Uart.o
                 0x008001bd                UART_RxBuffer
                 0x008001d6                PROVIDE (__bss_end, .)
-                0x00001816                __data_load_start = LOADADDR (.data)
-                0x00001970                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000018f0                __data_load_start = LOADADDR (.data)
+                0x00001a4a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001d6        0x0
                 0x008001d6                PROVIDE (__noinit_start, .)
@@ -616,7 +650,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x2a78
+.stab           0x00000000     0x2e44
  *(.stab)
  .stab          0x00000000      0x63c ./01-Source/04-Application/main.o
  .stab          0x0000063c      0x264 ./01-Source/02-HAL/SSD/Src/SSD.o
@@ -639,18 +673,20 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                                 0x330 (size before relaxing)
  .stab          0x00001d7c      0x390 ./01-Source/01-MCAL/SPI/Src/Spi.o
                                 0x498 (size before relaxing)
- .stab          0x0000210c      0x174 ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
+ .stab          0x0000210c      0x3cc ./01-Source/01-MCAL/I2C/Src/I2c.o
+                                0x4d4 (size before relaxing)
+ .stab          0x000024d8      0x174 ./01-Source/01-MCAL/GLBL_INT/Src/Glbl_INT.o
                                 0x204 (size before relaxing)
- .stab          0x00002280      0x228 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
+ .stab          0x0000264c      0x228 ./01-Source/01-MCAL/EXT_INT/Src/Ext_INT.o
                                 0x300 (size before relaxing)
- .stab          0x000024a8      0x42c ./01-Source/01-MCAL/DIO/Src/Dio.o
+ .stab          0x00002874      0x42c ./01-Source/01-MCAL/DIO/Src/Dio.o
                                 0x534 (size before relaxing)
- .stab          0x000028d4      0x1a4 ./01-Source/01-MCAL/ADC/Src/Adc.o
+ .stab          0x00002ca0      0x1a4 ./01-Source/01-MCAL/ADC/Src/Adc.o
                                 0x234 (size before relaxing)
 
-.stabstr        0x00000000     0x1bc3
+.stabstr        0x00000000     0x1d57
  *(.stabstr)
- .stabstr       0x00000000     0x1bc3 ./01-Source/04-Application/main.o
+ .stabstr       0x00000000     0x1d57 ./01-Source/04-Application/main.o
 
 .stab.excl
  *(.stab.excl)
