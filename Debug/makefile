@@ -12,6 +12,7 @@ RM := rm -rf
 -include 01-Source/02-HAL/SSD/Src/subdir.mk
 -include 01-Source/02-HAL/LED/Src/subdir.mk
 -include 01-Source/02-HAL/LCD/Src/subdir.mk
+-include 01-Source/02-HAL/EEPROM24C16/Src/subdir.mk
 -include 01-Source/02-HAL/BUZZER/Src/subdir.mk
 -include 01-Source/02-HAL/BUTTON/Src/subdir.mk
 -include 01-Source/01-MCAL/WDG/Src/subdir.mk
@@ -21,6 +22,7 @@ RM := rm -rf
 -include 01-Source/01-MCAL/I2C/Src/subdir.mk
 -include 01-Source/01-MCAL/GLBL_INT/Src/subdir.mk
 -include 01-Source/01-MCAL/EXT_INT/Src/subdir.mk
+-include 01-Source/01-MCAL/EEPROM/Src/subdir.mk
 -include 01-Source/01-MCAL/DIO/Src/subdir.mk
 -include 01-Source/01-MCAL/ADC/Src/subdir.mk
 -include subdir.mk

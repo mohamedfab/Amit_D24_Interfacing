@@ -13,32 +13,30 @@
 #include "Lcd.h"
 #include "Glbl_INT.h"
 #include "Ext_INT.h"
-#include <avr/interrupt.h>
 #include "Adc.h"
 #include "Uart.h"
 #include <string.h>
-
-extern volatile u8 UART_RxBuffer[RX_BUFFER_SIZE];
-extern volatile boolean Rx_Buffer_Ready;
-
+#include "Eeprom24C16.h"
+#include "Eeprom.h"
 int main ()
 {
-	u8 uartResult = 0;
-	Glbl_Interrupt_Enable();
+	u8 Num = 0;
 	Lcd_Init();
-	Lcd_Cmd(_LCD_CURSOR_OFF);
-	LED_Init();
-	UART_Init(UART_BAUDRATE_9600);
-	UART_TransmitStr("Hello UART.......");
+
+	if (EEPROM_Read(0) != 0xFF)
+	{
+		Num = EEPROM_Read(0);
+	}
+
+	Lcd_Goto_Row_Column(0, 0);
+	Lcd_DisplayStr("Counter = ");
 	while (1)
 	{
-		if (Rx_Buffer_Ready == TRUE)
-		{
-			Rx_Buffer_Ready = FALSE;
-			Lcd_Cmd(_LCD_CLEAR);
-			Lcd_Goto_Row_Column(0, 0);
-			Lcd_DisplayStr(UART_RxBuffer);
-		}
+		Lcd_Goto_Row_Column(0, 10);
+		Lcd_DisplayNum(Num);
+		Num++;
+		EEPROM_Write(0, Num);
+		_delay_ms(1000);
 	}
 	return 0;
 }

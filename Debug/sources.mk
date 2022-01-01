@@ -22,6 +22,7 @@ C_DEPS :=
 SUBDIRS := \
 01-Source/01-MCAL/ADC/Src \
 01-Source/01-MCAL/DIO/Src \
+01-Source/01-MCAL/EEPROM/Src \
 01-Source/01-MCAL/EXT_INT/Src \
 01-Source/01-MCAL/GLBL_INT/Src \
 01-Source/01-MCAL/I2C/Src \
@@ -31,6 +32,7 @@ SUBDIRS := \
 01-Source/01-MCAL/WDG/Src \
 01-Source/02-HAL/BUTTON/Src \
 01-Source/02-HAL/BUZZER/Src \
+01-Source/02-HAL/EEPROM24C16/Src \
 01-Source/02-HAL/LCD/Src \
 01-Source/02-HAL/LED/Src \
 01-Source/02-HAL/SSD/Src \

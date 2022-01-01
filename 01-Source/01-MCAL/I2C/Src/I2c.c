@@ -76,6 +76,7 @@ void I2C_StopCondition(void)
     	/*Do Nothing */
     	   ;
     }
+
 }
 void I2C_WriteByte(u8 data)
 {

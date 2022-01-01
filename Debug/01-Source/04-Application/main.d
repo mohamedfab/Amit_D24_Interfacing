@@ -24,7 +24,12 @@
   D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc.h \
   D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc_Reg.h \
   D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart.h \
-  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart_Private.h
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart_Private.h \
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\02-HAL\EEPROM24C16\Inc/Eeprom24C16.h \
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\I2C\Inc/I2c.h \
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\I2C\Inc/I2c_Private.h \
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\EEPROM\Inc/Eeprom.h \
+  D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\EEPROM\Inc/Eeprom_Reg.h
 
 D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\00-Lib/Std_Types.h:
 
@@ -75,3 +80,13 @@ D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\ADC\Inc/Adc_Reg.h:
 D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart.h:
 
 D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\UART\Inc/Uart_Private.h:
+
+D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\02-HAL\EEPROM24C16\Inc/Eeprom24C16.h:
+
+D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\I2C\Inc/I2c.h:
+
+D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\I2C\Inc/I2c_Private.h:
+
+D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\EEPROM\Inc/Eeprom.h:
+
+D:\Amit_Interfacing\Amit_D24_Interfacing\01-Source\01-MCAL\EEPROM\Inc/Eeprom_Reg.h:
