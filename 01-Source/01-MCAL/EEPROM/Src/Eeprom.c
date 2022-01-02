@@ -16,7 +16,6 @@ void EEPROM_Write(u16 address,u8 data)
 	/* Set up address and data registers */
 	EEPROM_ARL_REG=address;
 	EEPROM_ARH_REG = address>>8;
-
 	EEPROM_DR_REG = data;
 	/* Write logical one to EEMWE */
 	EEPROM_CR_REG |= (1<<EEMWE);

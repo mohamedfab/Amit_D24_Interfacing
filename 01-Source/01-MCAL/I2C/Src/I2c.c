@@ -14,7 +14,9 @@ void I2C_MasterInit(void)
 	I2C_TWBR_REG=0x0C;
     /* enable I2C Module	*/
 	/* enable ACK check	*/
-	I2C_TWCR_REG |=I2C_ENABLE|I2C_ENABLE_ACK|I2C_INTERRUPT_FLAG;
+	I2C_TWCR_REG |=I2C_ENABLE|I2C_ENABLE_ACK;
+	Lcd_Goto_Row_Column(1, 0);
+	Lcd_DisplayStr("I2C Init");
 }
 void I2C_SlaveInit(u8 addr)
 {
@@ -29,7 +31,7 @@ void I2C_SlaveInit(u8 addr)
 boolean I2C_StartCondition(void)
 {
 	/*	send start condition	*/
-	I2C_TWCR_REG = I2C_INTERRUPT_FLAG|I2C_START_COND|I2C_ENABLE;
+	I2C_TWCR_REG = I2C_INTERRUPT_FLAG|I2C_START_COND;
     /*	Wait until start condition sent successfully	*/
     while (!(CHK_BIT(I2C_TWCR_REG,I2C_INTERRUPT_FLAG_BIT_NO)))
     {
@@ -49,7 +51,7 @@ boolean I2C_StartCondition(void)
 boolean I2C_RepeatedStartCondition(void)
 {
 	/*	send start condition	*/
-	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG|I2C_ENABLE|I2C_START_COND;
+	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG|I2C_START_COND;
     /*	Wait until start condition sent successfully	*/
     while (!(CHK_BIT(I2C_TWCR_REG,I2C_INTERRUPT_FLAG_BIT_NO)))
     {
@@ -69,7 +71,7 @@ boolean I2C_RepeatedStartCondition(void)
 void I2C_StopCondition(void)
 {
 	/*	send stop condition	*/
-	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG|I2C_ENABLE|I2C_STOP_COND;
+	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG|I2C_STOP_COND;
 	/*	Wait until start condition sent successfully	*/
     while (!(CHK_BIT(I2C_TWCR_REG,I2C_INTERRUPT_FLAG_BIT_NO)))
     {
@@ -83,7 +85,7 @@ void I2C_WriteByte(u8 data)
     /*	Put data On I2C data Register	*/
 	I2C_TWDR_REG = data;
     /*	Send Data	*/
-	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG|I2C_ENABLE;
+	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG;
 	/*	Wait until data sent successfully	*/
     while (!(CHK_BIT(I2C_TWCR_REG,I2C_INTERRUPT_FLAG_BIT_NO)))
     {
@@ -124,7 +126,7 @@ boolean I2C_Send_SlaveAddressReadOperation(u8 addr)
 }
 u8 I2C_ReadByte(void)
 {
-	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG|I2C_ENABLE;
+	I2C_TWCR_REG |= I2C_INTERRUPT_FLAG;
 	/*	Wait until data sent successfully	*/
     while (!(CHK_BIT(I2C_TWCR_REG,I2C_INTERRUPT_FLAG_BIT_NO)))
     {

@@ -22,21 +22,14 @@ int main ()
 {
 	u8 Num = 0;
 	Lcd_Init();
-
-	if (EEPROM_Read(0) != 0xFF)
-	{
-		Num = EEPROM_Read(0);
-	}
-
-	Lcd_Goto_Row_Column(0, 0);
-	Lcd_DisplayStr("Counter = ");
+Eeprom24C16_Init();
+//Eeprom24C16_WriteByte(0, 'C');
+_delay_ms(20);
+Num = Eeprom24C16_ReadByte(0);
+	Lcd_DisplayChr(Num);
 	while (1)
 	{
-		Lcd_Goto_Row_Column(0, 10);
-		Lcd_DisplayNum(Num);
-		Num++;
-		EEPROM_Write(0, Num);
-		_delay_ms(1000);
+
 	}
 	return 0;
 }
