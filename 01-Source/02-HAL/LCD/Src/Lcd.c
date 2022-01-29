@@ -116,6 +116,7 @@ void Lcd_Goto_Row_Column(u8 row, u8 col)
 		break;
 	}
 }
+
 void Lcd_DisplayNum(u16 num)
 {
 	Lcd_DisplayChr(num/1000 + '0');

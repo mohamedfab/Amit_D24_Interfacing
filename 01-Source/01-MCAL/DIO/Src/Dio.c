@@ -196,3 +196,21 @@ level_type Dio_ReadChannel(port_type port,pin_type pin)
 	}
 	return result;
 }
+void Dio_ConfigChannelPullUp(port_type port,pin_type pin)
+{
+	switch (port)
+	{
+		case DIO_PORTA:
+			SET_BIT(DIO_PORTA_REG,pin);
+		break;
+		case DIO_PORTB:
+			SET_BIT(DIO_PORTA_REG,pin);
+		break;
+		case DIO_PORTC:
+			SET_BIT(DIO_PORTA_REG,pin);
+		break;
+		case DIO_PORTD:
+			SET_BIT(DIO_PORTA_REG,pin);
+		break;
+	}
+}

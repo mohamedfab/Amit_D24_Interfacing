@@ -33,8 +33,11 @@ SUBDIRS := \
 01-Source/02-HAL/BUTTON/Src \
 01-Source/02-HAL/BUZZER/Src \
 01-Source/02-HAL/EEPROM24C16/Src \
+01-Source/02-HAL/KEYPAD/Src \
 01-Source/02-HAL/LCD/Src \
 01-Source/02-HAL/LED/Src \
 01-Source/02-HAL/SSD/Src \
 01-Source/04-Application \
+01-Source/05-OS/Inc \
+01-Source/05-OS/Src \
 

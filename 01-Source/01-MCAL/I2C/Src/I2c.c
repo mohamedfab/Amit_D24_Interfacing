@@ -15,8 +15,7 @@ void I2C_MasterInit(void)
     /* enable I2C Module	*/
 	/* enable ACK check	*/
 	I2C_TWCR_REG |=I2C_ENABLE|I2C_ENABLE_ACK;
-	Lcd_Goto_Row_Column(1, 0);
-	Lcd_DisplayStr("I2C Init");
+
 }
 void I2C_SlaveInit(u8 addr)
 {

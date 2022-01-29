@@ -19,5 +19,6 @@ void Dio_WriteChannel(port_type port,pin_type pin,level_type level);
 void Dio_WriteGroup(port_type port,u8 mask,u8 data);
 void Dio_TogglChannel(port_type port,pin_type pin);
 level_type Dio_ReadChannel(port_type port,pin_type pin);
+void Dio_ConfigChannelPullUp(port_type port,pin_type pin);
 
 #endif /* DIO_H_ */

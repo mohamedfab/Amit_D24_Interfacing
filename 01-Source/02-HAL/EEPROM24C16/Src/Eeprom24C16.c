@@ -25,16 +25,12 @@ void Eeprom24C16_WriteByte(u16 addr, u8 data)
 	Lcd_DisplayNum(loc_byteNo);
 	I2C_StartCondition();
 	Lcd_Goto_Row_Column(1, 0);
-	Lcd_DisplayStr("Start");
 	I2C_Send_SlaveAddressWriteOperation(0x50 | ( ( addr & 0x0700 ) >> 8 ));
 	Lcd_Goto_Row_Column(1, 0);
-	Lcd_DisplayStr("SLA+W+A");
 	I2C_WriteByte(loc_byteNo);
 	Lcd_Goto_Row_Column(1, 0);
-	Lcd_DisplayStr("Write Add");
 	I2C_WriteByte(data);
 	Lcd_Goto_Row_Column(1, 0);
-	Lcd_DisplayStr("Write Data");
 	I2C_StopCondition();
 }
 

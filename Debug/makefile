@@ -8,10 +8,13 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include 01-Source/05-OS/Src/subdir.mk
+-include 01-Source/05-OS/Inc/subdir.mk
 -include 01-Source/04-Application/subdir.mk
 -include 01-Source/02-HAL/SSD/Src/subdir.mk
 -include 01-Source/02-HAL/LED/Src/subdir.mk
 -include 01-Source/02-HAL/LCD/Src/subdir.mk
+-include 01-Source/02-HAL/KEYPAD/Src/subdir.mk
 -include 01-Source/02-HAL/EEPROM24C16/Src/subdir.mk
 -include 01-Source/02-HAL/BUZZER/Src/subdir.mk
 -include 01-Source/02-HAL/BUTTON/Src/subdir.mk
